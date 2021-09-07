@@ -1,0 +1,44 @@
+....FF
+
+Failures:
+
+  1) Q3. Fibonacci sequence `puts`es first 20 Fibonacci numbers
+     Failure/Error:
+       expect { load "questions/question_3.rb" }
+         .to output(/#{expected}$/).to_stdout
+
+     SyntaxError:
+       questions/question_3.rb:22: syntax error, unexpected `end', expecting end-of-input
+     # ./spec/question_3_spec.rb:26:in `load'
+     # ./spec/question_3_spec.rb:26:in `block (3 levels) in <top (required)>'
+     # ./spec/question_3_spec.rb:26:in `block (2 levels) in <top (required)>'
+
+  2) Q3. Fibonacci sequence has acceptable code quality
+     Failure/Error: expect(code_quality.acceptable?).to(eq(true), code_quality.problems)
+
+       Inspecting 1 file
+       E
+
+       Offenses:
+
+       questions/question_3.rb:22:1: E: Lint/Syntax: unexpected token kEND
+       (Using Ruby 2.7 parser; configure using TargetRubyVersion parameter, under AllCops)
+       end
+       ^^^
+
+       1 file inspected, 1 offense detected
+
+       Diff:
+       @@ -1 +1 @@
+       -true
+       +false
+     # ./spec/question_3_spec.rb:32:in `block (2 levels) in <top (required)>'
+
+Finished in 5.44 seconds (files took 0.12323 seconds to load)
+6 examples, 2 failures
+
+Failed examples:
+
+rspec ./spec/question_3_spec.rb:25 # Q3. Fibonacci sequence `puts`es first 20 Fibonacci numbers
+rspec ./spec/question_3_spec.rb:30 # Q3. Fibonacci sequence has acceptable code quality
+

@@ -7,16 +7,20 @@
 #     number is the result of `0 + 1`.
 # * `puts`es these numbers, one per line.
 
-
 first = 0
 second = 1
 nth = 0
-c = 1
+c = 0
 while (c < 21)
-        puts nth
-        nth = first + second
-        first = second
-        second = nth
-    end
-    c = c + 1
-end
+  if (c == 0)
+    puts c 
+  elsif (c <= 1)
+    nth = c
+  else
+    puts nth
+    nth = first + second
+    first = second
+    second = nth
+  end
+  c = c + 1
+end 

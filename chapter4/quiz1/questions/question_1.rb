@@ -7,3 +7,21 @@
 #       `FizzBuzz`.
 #     * If the number is divisible by neither 3 or 5, keep the number.
 # * `puts`es these "FizzBuzz sequence" entries, one per line.
+
+FB = 0
+
+while FB < 20 do
+
+  FB = FB + 1
+  if (FB % 3 != 0) && (FB % 5 != 0)
+    puts FB
+  elsif (FB % 3 == 0) && (FB % 5 == 0)
+    puts "FizzBuzz"
+  elsif (FB % 3 != 0) && (FB % 5 == 0)
+    puts "Buzz"
+  elsif (FB % 3 == 0) && (FB % 5 != 0)
+    puts "Fizz"
+  end
+end
+
+    

@@ -13,4 +13,7 @@
 #   Ask again later
 #   $ ruby question_1.rb
 #   It is certain
+puts Array['It is certain', 'It is decidedly so', 'Ask again later', 'Outlook not so good', 
+           'Very doubtful'].sample
+
 

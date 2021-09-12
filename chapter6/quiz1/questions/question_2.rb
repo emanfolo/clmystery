@@ -20,3 +20,17 @@
 # * Note: You can assume the players will only ever input `rock`,
 #   `paper` or `scissors`.
 
+playerone = gets.chomp
+playertwo = gets.chomp
+
+if playerone == playertwo 
+  puts "It's a draw"
+elsif playerone == "rock" && playertwo == "scissors" || playertwo == "rock" && playerone == "paper"
+  puts "Player 1 wins"
+elsif playerone == "scissors" && playertwo == "paper"
+  puts "Player 1 wins"
+elsif playerone == "rock" && playertwo == "paper" || playertwo == "rock" && playerone == "scissors"
+  puts "Player 2 wins"
+elsif playerone == "paper" && playertwo == "scissors"
+  puts "Player 2 wins"
+end 

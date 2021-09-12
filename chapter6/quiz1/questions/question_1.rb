@@ -27,3 +27,13 @@
 # * Note: You can assume that the user will always enter either an
 #   integer or `stop`.
 
+n = 0
+i = 0
+
+while i != "stop"
+  puts "Give me a number"
+  i = gets.chomp
+  n = n + i.to_i
+end
+puts n
+

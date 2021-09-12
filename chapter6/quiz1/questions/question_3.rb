@@ -24,5 +24,26 @@
 #   doesn't work correctly, yet.
 # 
 # * Note: To pass the tests, you'll need to `puts` exactly what's
-#   expected. Watch out for stray punctuation, capital letters, etc.
+#   expected. Watch out for stray punctuation, capital letters, etc. 
+
+# passage = 0
+# cave = 1
+# light = 2
+position = 0
+
+while true
+  a = gets.chomp
+  if a == "north" && position == 0
+    position += 1
+    puts "You are in a scary cave."
+  elsif a == "south" && position == 1
+    position -= 1
+    puts "You are in a scary passage."
+  elsif a == "north" && position == 1
+    puts "You walk into sunlight."
+    break
+  end
+end
+
+
 

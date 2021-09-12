@@ -63,4 +63,39 @@
 #   ```
 
 river = "-----,--C--,CC-CC,CC-CC"
+player = "P"
+position = 2
+counter = 0
 
+while true
+  river[position] = player
+  puts river.split(",")
+  turn = gets.chomp
+  counter += 1
+  if turn == "left" && river[position + 5] != "C"
+    river[position] = "-"
+    river[position + 5] = player
+    position += 5
+  elsif turn == "left" && river[position + 5] == "C"
+    puts "You were eaten"
+    break 
+  elsif turn == "right" && river[position + 7] != "C"
+    river[position] = "-"
+    river[position + 7] = player
+    position += 7
+  elsif turn == "right" && river[position + 7] == "C"
+    puts "You were eaten"
+    break
+  elsif turn == "neither" && river[position + 6] != "C" && counter < 4
+    river[-9] = "-"
+    river[-3] = player
+    position += 6
+  elsif turn == "neither" && river[position + 6] == "C"
+    river[position] = "-"
+    puts "You were eaten"
+    break
+  elsif turn == "neither" && river[-3] != "C" && counter >= 4
+    puts "You survived!"
+    break
+  end
+end

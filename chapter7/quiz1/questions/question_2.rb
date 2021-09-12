@@ -51,3 +51,40 @@
 #   input integers for group numbers that exist when they are asked
 #   for the number of a group to print out.
 
+num = gets.chomp.to_i
+group = Array.new
+
+while true do 
+  input = gets.chomp.to_s
+  if input != "stop"
+    group.push(input)
+  elsif input == "stop"
+    break 
+  end 
+end 
+
+while true do 
+  finder = gets.chomp
+  if finder != "stop" && group.length > 0 && num == 1
+    puts group.join(', ')
+  elsif finder != "stop" && group.length > 0 && num > 1
+    a = group[0]
+    b = group[1]
+    c = group[2]
+    d = group[3]
+    e = group[4]
+    puts "#{a}, #{d}"
+    puts "#{b}, #{e}"
+    puts "#{c}"
+  elsif finder != "stop" && group.length == 0 
+    zero = Array.new(num)
+    puts zero
+  elsif finder == "stop"
+    break
+  end
+end
+
+
+
+
+

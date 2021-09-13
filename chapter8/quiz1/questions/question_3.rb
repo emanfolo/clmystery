@@ -36,3 +36,33 @@ people = [
   { "name" => "Will", "sport" => "cycling", "fruit" => "blackberry" }
 ]
 
+by_sport = {}
+by_fruit = {}
+counter = 0
+
+people.each do
+  n = people[counter]["name"]
+  s = people[counter]["sport"]
+  f = people[counter]["fruit"]
+  by_sport[n] = s
+  by_fruit[n] = f
+  counter += 1
+end
+
+answersport = by_sport.group_by(&:last).transform_values { |v| v.map(&:first) }
+
+answerfruit = by_fruit.group_by(&:last).transform_values { |v| v.map(&:first) }
+
+input = gets.chomp
+if input == "sport"
+  answersport.each do |k, v|
+    puts k
+    puts v
+  end
+elsif input == "fruit"
+  answerfruit.each do |k, v|
+    puts k 
+    puts v
+  end
+end 
+
